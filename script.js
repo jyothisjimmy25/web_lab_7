@@ -3,19 +3,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const bookListDiv = document.getElementById("bookList");
 
     fetchBooksButton.addEventListener("click", function () {
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", "books.json", true);
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "books.json", true);
 
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                const books = JSON.parse(xhr.responseText);
+        xhttp.onload = function () {
+            if (xhttp.status === 200) {
+                const books = JSON.parse(xhttp.responseText);
                 displayBooks(books);
             } else {
                 console.error("Failed to fetch books.");
             }
         };
 
-        xhr.send();
+        xhttp.send();
     });
 
     function displayBooks(books) {
